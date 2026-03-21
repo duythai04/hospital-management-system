@@ -7,7 +7,7 @@ const Header = () => {
       style={{
         height: "70px",
         top: 0,
-        left: "250px", // ⚠️ bằng width sidebar
+        left: "250px", 
         right: 0,
         zIndex: 1000
       }}

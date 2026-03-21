@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using hospital_backend.Data;
 
@@ -10,9 +11,11 @@ using hospital_backend.Data;
 namespace hospital_backend.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    partial class HospitalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260321115747_AddTableDoctor")]
+    partial class AddTableDoctor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,15 +105,11 @@ namespace hospital_backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Allergies")
+                    b.Property<string>("Blood_type")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("BloodType")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime>("Created_at")
                         .HasColumnType("datetime(6)");
 
                     b.Property<DateTime>("Dob")
@@ -123,7 +122,7 @@ namespace hospital_backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("Full_name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -131,28 +130,9 @@ namespace hospital_backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("InsuranceNumber")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("MedicalHistory")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("PatientCode")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
@@ -163,11 +143,9 @@ namespace hospital_backend.Migrations
 
             modelBuilder.Entity("hospital_backend.Models.Patient", b =>
                 {
-                    b.HasOne("hospital_backend.Models.Doctor", "Doctor")
+                    b.HasOne("hospital_backend.Models.Doctor", null)
                         .WithMany("Patients")
                         .HasForeignKey("DoctorId");
-
-                    b.Navigation("Doctor");
                 });
 
             modelBuilder.Entity("hospital_backend.Models.Doctor", b =>

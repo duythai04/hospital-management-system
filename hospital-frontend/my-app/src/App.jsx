@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import PatientList from "./pages/PatientList";
 import Sidebar from "./components/Sidebar";
 import AddPatient from "./pages/AddPatient";
+import PatientDetail from "./pages/PatientDetail";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/patient" element={<PatientList/>} />
               <Route path = "/add-patient" element={<AddPatient/>}/>
+              <Route path = "/patient-detail/:id" element = {<PatientDetail/>}/>
             </Routes>
           </div>
         </div>

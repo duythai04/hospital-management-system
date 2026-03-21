@@ -8,6 +8,10 @@ export const getPatients = async () => {
 
 };
 
+export const getPatientById = async (id) => {
+  return await axios.get(`${API_URL}/${id}`);
+}
+
 export const createPatient = async (data) => {
   return await axios.post(API_URL, data);
 };

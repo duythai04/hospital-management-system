@@ -11,7 +11,7 @@ import {
 import { NavLink } from "react-router-dom";
 import './Sidebar.css'
 import { MdLocalHospital } from "react-icons/md";
-
+import { MdDashboard } from "react-icons/md";
 const Sidebar = () => {
   return (
     <div className="sidebar">
@@ -25,7 +25,7 @@ const Sidebar = () => {
       <ul className="sidebar-menu">
         <li>
           <NavLink to="/" end className={({ isActive }) => isActive ? "active" : ""}>
-            <FaHome />
+            <MdDashboard />
             <span>Dashboard</span>
           </NavLink>
         </li>

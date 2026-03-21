@@ -9,7 +9,7 @@ namespace hospital_backend.Data
             : base(options)
         {
         }
-
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<Doctor> Doctors {get; set;}
     }
 }

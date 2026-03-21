@@ -1,20 +1,33 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace hospital_backend.Models
 {
     public class Patient
     {
-        public int Id {get; set; }
-        public string Full_name {get; set;}
+        [Key]
+        public int Id { get; set; }
 
-        public DateTime Dob {get; set;}
-        public string Gender {get; set;}
+        public string? PatientCode { get; set; }
+        public string FullName { get; set; }
+        public DateTime Dob { get; set; }
+        public string Gender { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public string BloodType { get; set; }
+        public string MedicalHistory { get; set; }
+        public string Allergies { get; set; }
+        public string InsuranceNumber { get; set; }
+        public string Status { get; set; }
 
-        public string Phone {get; set;}
+        // Đảm bảo 3 dòng này có mặt và viết đúng chính tả
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime? UpdatedAt { get; set; }
 
-        public string Address {get; set;}
-
-        public string Blood_type {get; set;}
-
-        public DateTime Created_at {get; set;}
+        public int? DoctorId { get; set; }
+        [ForeignKey("DoctorId")]
+        public virtual Doctor? Doctor { get; set; } // Phải có dòng này
     }
 }
