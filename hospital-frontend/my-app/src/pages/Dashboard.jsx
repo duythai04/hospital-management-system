@@ -12,7 +12,6 @@ const Dashboard = () => {
     const fetchPatients = async () => {
       try {
         const res = await getPatients();
-        // Xử lý cả trường hợp .NET trả về $values hoặc mảng trực tiếp
         const data = res.data.$values || res.data;
         setPatients(Array.isArray(data) ? data : []);
       } catch (error) {

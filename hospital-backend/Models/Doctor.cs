@@ -14,6 +14,7 @@ namespace hospital_backend.Models
 
         [Required]
         [StringLength(100)]
+
         public string Name { get; set; }
 
         public string Address { get; set; }
@@ -27,6 +28,7 @@ namespace hospital_backend.Models
         public string Gender { get; set; }
 
         [Column(TypeName = "date")]
+        
         public DateTime Bod { get; set; } // Date of Birth
 
         public string Department { get; set; } // Ví dụ: Outpatient department (OPD)
@@ -45,6 +47,7 @@ namespace hospital_backend.Models
         
         // Social Media links (nếu cần quản lý như trong ảnh)
         public string FacebookUrl { get; set; }
+
         public string TwitterUrl { get; set; }
 
 

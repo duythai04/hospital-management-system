@@ -10,6 +10,7 @@ namespace hospital_backend.Models
         public int Id { get; set; }
 
         public string? PatientCode { get; set; }
+        
         public string FullName { get; set; }
         public DateTime Dob { get; set; }
         public string Gender { get; set; }
@@ -22,12 +23,11 @@ namespace hospital_backend.Models
         public string InsuranceNumber { get; set; }
         public string Status { get; set; }
 
-        // Đảm bảo 3 dòng này có mặt và viết đúng chính tả
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime? UpdatedAt { get; set; }
 
         public int? DoctorId { get; set; }
         [ForeignKey("DoctorId")]
-        public virtual Doctor? Doctor { get; set; } // Phải có dòng này
+        public virtual Doctor? Doctor { get; set; } 
     }
 }

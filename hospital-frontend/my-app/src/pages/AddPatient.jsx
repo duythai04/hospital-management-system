@@ -31,7 +31,6 @@ const AddPatient = () => {
     if (editPatient) {
       setPatient({
         ...editPatient,
-        // Cắt chuỗi ISO (2026-03-21T00:00:00) thành yyyy-MM-dd cho input date
         dob: editPatient.dob ? editPatient.dob.split("T")[0] : "",
         doctorId: editPatient.doctorId ? editPatient.doctorId.toString() : ""
       });

@@ -5,6 +5,7 @@ import PatientList from "./pages/PatientList";
 import Sidebar from "./components/Sidebar";
 import AddPatient from "./pages/AddPatient";
 import PatientDetail from "./pages/PatientDetail";
+import Login from "./components/Login";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="/patient" element={<PatientList/>} />
               <Route path = "/add-patient" element={<AddPatient/>}/>
               <Route path = "/patient-detail/:id" element = {<PatientDetail/>}/>
+              <Route path = "/login" element = {<Login/>}/>
             </Routes>
           </div>
         </div>
